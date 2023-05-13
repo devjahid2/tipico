@@ -1,18 +1,25 @@
 import React from 'react';
-import {View, StyleSheet, Image} from 'react-native';
+import {View, StyleSheet, Image,Pressable} from 'react-native';
 import Text from '../Text';
 
-const Fruits = ({item}) => {
-    const {image,title,type,update} = item
+const Fruits = ({item,navigation}) => {
+    const {image,title,type,update} = item;
+    const navigateFoodDetails = () => {
+        navigation.navigate('FoodDetails')
+    }
     return (
-        <View style={[styles.flex,styles.card,{marginTop:20}]}>
+        <Pressable onPress={navigateFoodDetails} style={[styles.flex,styles.card,{marginTop:20}]}>
             
-            <Image style={{backgroundColor:'#F8FFCC',borderRadius:100}} source={image}/>
+            <View style={{backgroundColor:'#F8FFCC',borderRadius:100,width:60,height:60}}>
+                <Image source={image}/>
+            </View>
 
             <View>
-                <Text>{title}</Text>
+                <Text type='subtitle' style={styles.color}>{title}</Text>
+                <Text type="title" style={styles.color}>{type}</Text>
+                <Text style={{color:'#868889'}} type="subtitle">Last Update: {update}</Text>
             </View>
-        </View>
+        </Pressable>
     );
 }
 
@@ -25,6 +32,9 @@ const styles = StyleSheet.create({
     card:{
         backgroundColor:'#fff',
         padding:10
+    },
+    color:{
+        color:'#362F74'
     }
 })
 

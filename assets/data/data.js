@@ -1,4 +1,9 @@
 import oil from '../images/oil.png'
+import green from '../images/green-fresh-broccoli.png'
+import pineapple from '../images/pineapple-pieces.png'
+import spices from '../images/spices.png'
+import juce from '../images/juce.png'
+
 export const plans = [
   {
     id: 1,
@@ -27,36 +32,30 @@ export const fruits = [
         title:'12 items (IN) this week',
         type:'Vegetables Items',
         update:'14 Feb',
-        image:oil
+        image:green
     },
     {   id:2,
         title:'12 items (IN) this week',
-        type:'Vegetables Items',
+        type:'Oils',
         update:'14 Feb',
         image:oil
     },
     {   id:3,
         title:'12 items (IN) this week',
-        type:'Vegetables Items',
+        type:'Fruits',
         update:'14 Feb',
-        image:oil
+        image:pineapple
     },
     {   id:4,
         title:'12 items (IN) this week',
-        type:'Vegetables Items',
+        type:'Spices',
         update:'14 Feb',
-        image:oil
+        image:spices
     },
     {   id:5,
         title:'12 items (IN) this week',
-        type:'Vegetables Items',
+        type:'Beverages',
         update:'14 Feb',
-        image:oil
-    },
-    {   id:6,
-        title:'12 items (IN) this week',
-        type:'Vegetables Items',
-        update:'14 Feb',
-        image:oil
-    },
+        image:juce
+    }
 ]

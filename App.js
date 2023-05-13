@@ -16,7 +16,7 @@ const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
 const App = () => {
-  const [user, setUser] = React.useState(true);
+  const [user, setUser] = React.useState(false);
   return (
     <NavigationContainer>
       {user ? (

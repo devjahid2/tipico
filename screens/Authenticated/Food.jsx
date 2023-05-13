@@ -6,7 +6,7 @@ import Search from '../../components/secure/Search';
 import { fruits } from '../../assets/data/data';
 import Fruits from '../../components/secure/Fruits';
 
-const Food = () => {
+const Food = ({navigation}) => {
     return (
         <ScrollView showsVerticalScrollIndicator={false}>
             <Header title={'Hi David!'} subtitle={'October 2022'}>
@@ -16,7 +16,7 @@ const Food = () => {
             {
                 fruits.map((item) => {
                     return (
-                        <Fruits item={item} key={item.id}/>
+                        <Fruits navigation={navigation} item={item} key={item.id}/>
                     )
                 })
             }
