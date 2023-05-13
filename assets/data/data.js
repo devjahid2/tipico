@@ -13,12 +13,13 @@ export const plans = [
     offer2: "Lorem ipsum dolor sit amet consectetur. Aliquam libero senectus",
   },
   {
+    id:2,
     title: "Plan 2",
     price: 500,
     offer1: "Lorem ipsum dolor sit amet consectetur. Aliquam libero senectus",
     offer2: "Lorem ipsum dolor sit amet consectetur. Aliquam libero senectus",
   },
-  {
+  {id:3,
     title: "Plan 3",
     price: 1000,
     offer1: "Lorem ipsum dolor sit amet consectetur. Aliquam libero senectus",
@@ -58,4 +59,32 @@ export const fruits = [
         update:'14 Feb',
         image:juce
     }
+]
+
+export const foodWeight = [
+    {
+        id:1,
+        title:'Fresh B roccoli',
+        weight:'12kg (IN) this week'
+    },
+    {
+        id:2,
+        title:'Garlic',
+        weight:'12kg (IN) this week'
+    },
+    {
+        id:3,
+        title:'Ginger',
+        weight:'12kg (IN) this week'
+    },
+    {
+        id:4,
+        title:'Radish',
+        weight:'12kg (IN) this week'
+    },
+    {
+        id:5,
+        title:'Salsify',
+        weight:'12kg (IN) this week'
+    },
 ]

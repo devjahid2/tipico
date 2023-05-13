@@ -5,7 +5,9 @@ import Text from '../Text';
 const Fruits = ({item,navigation}) => {
     const {image,title,type,update} = item;
     const navigateFoodDetails = () => {
-        navigation.navigate('FoodDetails')
+        navigation.navigate('FoodDetails',{
+            id:item.id
+        })
     }
     return (
         <Pressable onPress={navigateFoodDetails} style={[styles.flex,styles.card,{marginTop:20}]}>

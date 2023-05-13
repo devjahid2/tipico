@@ -11,12 +11,13 @@ import { StatusBar } from "expo-status-bar";
 import Login from "./screens/Login";
 import SignUp from "./screens/SignUp";
 import HomeStack from "./navigations/authenticated/Home";
+import SummaryStack from "./navigations/authenticated/SummaryStack";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
 const App = () => {
-  const [user, setUser] = React.useState(false);
+  const [user, setUser] = React.useState(true);
   return (
     <NavigationContainer>
       {user ? (
@@ -33,7 +34,7 @@ const App = () => {
         >
           <Tab.Screen name="HomeStack" component={HomeStack}/>
           <Tab.Screen name="Scan" component={Home}/>
-          <Tab.Screen name="Transfer" component={Home}/>
+          <Tab.Screen name="SummaryStack" component={SummaryStack}/>
           <Tab.Screen name="Profile" component={Home}/>
         </Tab.Navigator>
       ) : (

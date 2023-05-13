@@ -15,7 +15,7 @@ const Home = ({navigation}) => {
             <View style={safeArea.android}>
                 {
                     plans.map((item) => {
-                        return <Plans navigation={navigation} item={item}/>
+                        return <Plans key={item.id} navigation={navigation} item={item}/>
                     })
                 }
             </View>

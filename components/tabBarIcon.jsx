@@ -18,7 +18,7 @@ const ActiveIcon = ({ name }) => {
           source={require("../assets/images/scan-active.png")}
         />
       );
-    case "Transfer":
+    case "SummaryStack":
       return (
         <Image
           style={styles.image}
@@ -51,7 +51,7 @@ const InActiveIcon = ({ name }) => {
           source={require("../assets/images/scan-inactive.png")}
         />
       );
-    case "Transfer":
+    case "SummaryStack":
       return (
         <Image
           style={styles.image}
