@@ -7,6 +7,11 @@ import Button from '../../components/Button';
 
 const Profile = () => {
     const [readOnly,setReadOnly] = useState(true);
+    const [email,setEmail] = useState('');
+    const [card,setCard] = useState('');
+    const [country,setCountry] = useState('');
+    const [country2,setCountry2] = useState('');
+    const [gmail,setGmail] = useState('');
     const handelReadOnly = () => {
         alert('Profile Edit Mode Enable')
         setReadOnly(false);
@@ -29,11 +34,11 @@ const Profile = () => {
             </View>
             </View>
             <View style={{margin:15,padding:15,paddingBottom:0}}>
-                <Input readOnly={readOnly} defaultValue={'nvt.isst.nute@gmail.com'} placeholder={'Email'}/>
-                <Input readOnly={readOnly} defaultValue={'202-555-0137'} placeholder={'card'}/>
-                <Input readOnly={readOnly} defaultValue={'South of Canada'} placeholder={'Country'}/>
-                <Input readOnly={readOnly} defaultValue={'support.google.com'} placeholder={'Gmail'}/>
-                <Input readOnly={readOnly} defaultValue={'South of Canada'} placeholder={'Country'}/>
+                <Input handler={setEmail} readOnly={readOnly} defaultValue={'nvt.isst.nute@gmail.com'} placeholder={'Email'}/>
+                <Input handler={setCard} readOnly={readOnly} defaultValue={'202-555-0137'} placeholder={'card'}/>
+                <Input handler={setCountry} readOnly={readOnly} defaultValue={'South of Canada'} placeholder={'Country'}/>
+                <Input handler={setGmail} readOnly={readOnly} defaultValue={'support.google.com'} placeholder={'Gmail'}/>
+                <Input handler={setCountry2} readOnly={readOnly} defaultValue={'South of Canada'} placeholder={'Country'}/>
                 {
                     readOnly ? <Button onPress={handelReadOnly}>Edit now</Button> :<Button onPress={handelUpdate}>Update</Button> 
                 }
