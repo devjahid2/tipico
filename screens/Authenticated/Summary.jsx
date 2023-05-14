@@ -14,7 +14,7 @@ const Summary = ({navigation}) => {
     return (
         <ScrollView showsHorizontalScrollIndicator={false}>
             <Header title={'Hi David!'} subtitle={'October 2022'}>
-                <Search title="Total in" subtitle="Total out" action={handelSearch} setSearchValue={setSearchValue}/>
+                <Search  title="Total in" subtitle="Total out" action={handelSearch} setSearchValue={setSearchValue}/>
             </Header>
             <View style={{padding:15}}>
             <View style={{padding:15,backgroundColor:'#fff'}}>
@@ -24,7 +24,7 @@ const Summary = ({navigation}) => {
                 </View>
                 {
                     foodWeight.map((item) => {
-                        return (<FoodWeight item={item} key={item.id}/>)
+                        return (<FoodWeight  item={item} key={item.id}/>)
                     })
                 }
             </View>

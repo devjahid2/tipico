@@ -21,10 +21,16 @@ const Search = ({placeholder,setSearchValue,action,navigation,title,subtitle}) =
                 }
             </View>
             <View style={[styles.flex,styles.btnWrap,{width:'50%',gap:10}]}>
-                <Button onPress={handelNavigate} height={40} size={10}>{title || 'Add food'}</Button>
-                <Pressable onPress={handelNavigateMale}>
+                {
+                    navigation ? <Button onPress={handelNavigate} height={40} size={10}>{title || 'Add food'}</Button> : <Button height={40} size={10}>{title || 'Add food'}</Button>
+                }
+                {
+                    navigation ? <Pressable onPress={handelNavigateMale}>
+                    <Text type="subtitle">{subtitle||'Create food'}</Text>
+                </Pressable> : <Pressable>
                     <Text type="subtitle">{subtitle||'Create food'}</Text>
                 </Pressable>
+                }
             </View>
         </View>
     );
