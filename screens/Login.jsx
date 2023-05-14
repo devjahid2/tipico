@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import {View, StyleSheet, SafeAreaView, Pressable} from 'react-native';
 import safeArea from '../components/safeArea';
 import Header from '../components/Header';
@@ -7,13 +7,16 @@ import Text from './../components/Text';
 import Input from '../components/Input';
 import Button from '../components/Button';
 import SocialLogin from '../components/SocialLogin';
+import { AppContext } from '../App';
 
 const Login = ({navigation}) => {
-    const [email,setEmail] = useState('')
+    const [email,setEmail] = useState('');
+    const [user,setUser] = useContext(AppContext)
     const [password,setPassword] = useState('');
 
     const handelLoginWithEmail = () =>{
-        console.log(email,password)
+        console.log(email,password);
+        setUser(true)
     }
     const goToReg = () => {
         console.log('sign up')

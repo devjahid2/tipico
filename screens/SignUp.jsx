@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import {View, StyleSheet, Pressable} from 'react-native';
 import Text from '../components/Text';
 import { SafeAreaView } from 'react-native';
@@ -8,13 +8,15 @@ import { commonStyles } from '../assets/cummon/style';
 import Input from '../components/Input';
 import Button from '../components/Button';
 import SocialLogin from '../components/SocialLogin';
+import { AppContext } from '../App';
 
 const SignUp = ({navigation}) => {
     const [email,setEmail] = useState('')
     const [password,setPassword] = useState('');
     const [confirmPassword,setConfirmPassword] = useState('');
+    const [user,setUser] = useContext(AppContext)
     const handelSignup = () => {
-
+        // setUser(true)
     }
     const goToLogin = () => {
         navigation.navigate('Login')

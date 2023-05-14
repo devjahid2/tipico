@@ -1,5 +1,13 @@
 {
   "expo": {
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow Tipico to access your camera."
+        }
+      ]
+    ],
     "name": "Tipico",
     "slug": "tipico",
     "version": "1.0.0",
@@ -21,7 +29,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/splash.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.jahid757.tipico"
     }
   }
 }

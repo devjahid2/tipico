@@ -3,7 +3,6 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import OnBoarding from "./screens/OnBoarding";
-import Home from "./screens/Authenticated/Home";
 import TabBarIcon from "./components/tabBarIcon";
 import { StatusBar } from "expo-status-bar";
 import Login from "./screens/Login";
@@ -11,14 +10,18 @@ import SignUp from "./screens/SignUp";
 import HomeStack from "./navigations/authenticated/Home";
 import SummaryStack from "./navigations/authenticated/SummaryStack";
 import ProfileStack from "./navigations/authenticated/ProfileStack";
+import ScanStack from "./navigations/authenticated/ScanStack";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
+  export const AppContext = React.createContext({user:false});
+
 const App = () => {
-  const [user, setUser] = React.useState(true);
+  const [user, setUser] = React.useState(false);
   return (
-    <NavigationContainer>
+    <AppContext.Provider value={[user, setUser]}>
+      <NavigationContainer>
       {user ? (
         <Tab.Navigator screenOptions={ ({ route }) => ({
           headerShown: false,
@@ -32,7 +35,7 @@ const App = () => {
         
         >
           <Tab.Screen name="HomeStack" component={HomeStack}/>
-          <Tab.Screen name="Scan" component={Home}/>
+          <Tab.Screen name="ScanStack" component={ScanStack}/>
           <Tab.Screen name="SummaryStack" component={SummaryStack}/>
           <Tab.Screen name="Profile" component={ProfileStack}/>
         </Tab.Navigator>
@@ -45,6 +48,7 @@ const App = () => {
       )}
       <StatusBar backgroundColor="#362F74" style="light" />
     </NavigationContainer>
+  </AppContext.Provider>
   );
 };
 
