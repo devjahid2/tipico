@@ -20,7 +20,7 @@ const Scan = ({navigation}) => {
   if (!permission.granted) {
     // Camera permissions are not granted yet
     return (
-      <View style={styles.container}>
+      <View style={{height:100,alignItems:'center',justifyContent:'center',marginTop:100}}>
         <Text style={{ textAlign: 'center' }}>We need your permission to show the camera</Text>
         <Button onPress={requestPermission}>Allow</Button>
       </View>
